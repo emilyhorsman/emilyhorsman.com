@@ -1,5 +1,6 @@
 {
   "name": "emilyhorsman.com",
+  "private": true,
   "version": "1.0.0",
   "description": "Personal website of Emily Horsman",
   "dependencies": {},
@@ -16,5 +17,13 @@
     "postcss-nested": "^0.3.2",
     "postcss-simple-vars": "^0.3.0"
   },
-  "author": "Emily Horsman"
+  "author": {
+    "name": "Emily Horsman",
+    "email": "me@emilyhorsman.com",
+    "url": "http://emilyhorsman.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emilyhorsman/emilyhorsman.com"
+  }
 }

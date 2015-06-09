@@ -12,7 +12,7 @@ var vars         = require('postcss-simple-vars');
 var paths = {
     src: {
         css: 'css/*.css',
-        markup: 'markup/*.jade',
+        markup: 'markup/!(_)*.jade',
         images: 'images/**/*',
         icons: 'icons/**/*'
     },
@@ -27,7 +27,7 @@ var paths = {
 var css = function(use_sourcemap, extra) {
     extra = extra || [];
     var processors = [ nested(), mixins(), vars() ].concat(extra);
-    var g = gulp.src(paths.src.css).changed(paths.dest.css);
+    var g = gulp.src(paths.src.css);
     if (use_sourcemap)
         g.pipe(sourcemaps.init())
          .pipe(postcss(processors))

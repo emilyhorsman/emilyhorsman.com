@@ -14,6 +14,7 @@
     "gulp-postcss": "^5.1.8",
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
+    "marked": "^0.3.3",
     "postcss-mixins": "^0.3.0",
     "postcss-nested": "^0.3.2",
     "postcss-simple-vars": "^0.3.0"

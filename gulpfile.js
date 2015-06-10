@@ -75,6 +75,7 @@ gulp.task('css', function() {
 gulp.task('markup', function() {
     gulp.src(paths.src.markup)
         .pipe($.cached('markup'))
+        .pipe($.jade())
 
         // Convert unicode characters (e.g. not <>, etc) to HTML entities
         .pipe($.entityConvert())

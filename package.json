@@ -15,13 +15,16 @@
     "gulp-jade": "^1.0.1",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-css": "^1.1.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^5.1.8",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.5",
     "marked": "^0.3.3",
     "postcss-mixins": "^0.3.0",
     "postcss-nested": "^0.3.2",
-    "postcss-simple-vars": "^0.3.0"
+    "postcss-simple-vars": "^0.3.0",
+    "strip-ansi": "^2.0.1"
   },
   "author": {
     "name": "Emily Horsman",

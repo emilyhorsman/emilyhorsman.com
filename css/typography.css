@@ -11,6 +11,12 @@ html.wf-museoslab-i3-active {
 }
 
 p {
-    font-size: 1.3em;
-    line-height: 1.6em;
+    font-size: 1.1em;
+    line-height: 1.8em;
+}
+
+.backed {
+    background-color: $madison_blue;
+    color: $solitude_blue;
+    padding: 0.2em 0.4em;
 }

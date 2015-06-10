@@ -1,14 +1,56 @@
 /* Mobile-first */
-#container {
-    padding: 1em 2em;
+.clear-fix {
+    clear: both;
 }
 
 div#personal-image {
     margin: 0 auto;
+    width: 6em;
+    height: 6em;
 }
 
 header {
     text-align: center;
+    margin-bottom: 1em;
+
+    h1 {
+        margin: 0;
+        padding: 0.2em;
+        background-color: $madison_blue;
+        color: $solitude_blue;
+    }
 }
 
+section.right {
+    padding: 0 1.5em;
+}
+
+
 /* Progressive enhancement */
+$sm: (min-width: 35.5em);
+$md: (min-width: 48em);
+$lg: (min-width: 64em);
+
+@media $md {
+    section.left {
+        width: 6em;
+        float: left;
+        padding: 1em 0 1em 1em;
+    }
+
+    section.right {
+        display: inline-block;
+        width: 35em;
+        float: left;
+    }
+}
+
+@media $lg {
+    section.left {
+        padding-left: 10%;
+    }
+
+    section.right {
+        width: 40em;
+    }
+}

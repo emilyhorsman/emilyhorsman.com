@@ -42,6 +42,8 @@ $lg: (min-width: 64em);
         width: 35em;
         float: left;
     }
+
+    header h1 { font-size: 3em; }
 }
 
 @media $lg {

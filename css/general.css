@@ -1,0 +1,14 @@
+.flag {
+    width: 1.5em;
+    margin-right: 0.3em;
+}
+
+div#personal-image {
+    background-image: url(../images/crop.jpg);
+    background-size: contain;
+    background-position: 50%;
+    border: 0.2em solid #e4c1f9;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+}

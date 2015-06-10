@@ -1,0 +1,14 @@
+/* Mobile-first */
+#container {
+    padding: 1em 2em;
+}
+
+div#personal-image {
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+}
+
+/* Progressive enhancement */

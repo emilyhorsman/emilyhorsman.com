@@ -1,16 +1,15 @@
 extends _boilerplate.jade
 
 block content
-    .main-container
-        .main.wrapper.clearfix
+    #container
+        header
             #personal-image
+            h1 Emily Horsman
 
-            header
-                h1 Emily Horsman
+        article
+            include:markdown main_article.md
 
-            article
-                include:markdown main_article.md
-
+        section
             p
                 img(src="images/flag1.svg", class="flag")
                 img(src="images/flag2.svg", class="flag")

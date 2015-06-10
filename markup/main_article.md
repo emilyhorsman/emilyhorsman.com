@@ -1,1 +1,1 @@
-Test!
+(◡ ‿ ◡ ✿) Hi! I’m Emily. I’m a future undergrad student in the Toronto area and a bit of an autodidact. I’m studying and working on projects with focuses such as intersectional feminism, neuroscience, programming, nutritional science, and public health. I’m an avid reader and podcast enthusiast. I’m lucky to have been nudged towards the iterative, constant process of improving life—a parallel to [iterative design](http://en.wikipedia.org/wiki/Iterative_design). I strive to embrace diversity and include marginalized groups in my world view. Empathy is happiness.

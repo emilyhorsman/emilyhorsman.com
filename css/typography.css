@@ -1,0 +1,16 @@
+html.wf-fertigoscript-n4-active {
+    header h1 {
+        font-family: "fertigo-script", sans-serif;
+    }
+}
+
+html.wf-museoslab-i3-active {
+    p {
+        font-family: "museo-slab", sans-serif;
+    }
+}
+
+p {
+    font-size: 1.3em;
+    line-height: 1.6em;
+}

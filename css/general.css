@@ -10,3 +10,23 @@ div#personal-image {
     border: 0.3em solid $madison_blue;
     border-radius: 50%;
 }
+
+h4.social {
+    margin-bottom: 0.1em;
+}
+
+.social-link {
+    color: #000;
+    text-decoration: none;
+    line-height: 2.5em;
+    margin-right: 1em;
+    padding: 0.2em 0.4em;
+    color: #fff;
+    white-space: nowrap;
+
+    &.n0 { background-color: $madison_blue; }
+    &.n1 { background-color: $summer_sky_blue; }
+    &.n2 { background-color: $cinnabar_red; }
+    &.n3 { background-color: $pelorous_blue; }
+    &.n4 { background-color: #e4c1f9; }
+}

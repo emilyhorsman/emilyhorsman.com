@@ -1,0 +1,7 @@
+h4.social Find me on…
+
+#social
+    p
+        each link, index in social
+            a.social-link(href=link.url, target="_blank", class="n#{index % 5}")= link.name
+            | 

@@ -5,9 +5,7 @@ html.wf-fertigoscript-n4-active {
 }
 
 html.wf-museoslab-i3-active {
-    p {
-        font-family: "museo-slab", sans-serif;
-    }
+    font-family: "museo-slab", sans-serif;
 }
 
 p {

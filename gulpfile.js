@@ -79,9 +79,10 @@ gulp.task('css', function() {
 });
 
 gulp.task('markup', function() {
+    var social = $.yaml.safeLoad(fs.readFileSync('./markup/social.yaml'));
     gulp.src(paths.src.markup)
         .pipe($.cached('markup'))
-        .pipe($.jade())
+        .pipe($.jade({ locals: { social: social } }))
 
         // Convert unicode characters (e.g. not <>, etc) to HTML entities
         .pipe($.entityConvert())

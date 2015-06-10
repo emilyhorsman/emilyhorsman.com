@@ -25,7 +25,6 @@ section.right {
     padding: 0 1.5em;
 }
 
-
 /* Progressive enhancement */
 $sm: (min-width: 35.5em);
 $md: (min-width: 48em);

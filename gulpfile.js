@@ -12,7 +12,8 @@ var gulp  = require('gulp');
 // plugin names.
 var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*', 'gulp.*', '*css*', 'autoprefixer-core', 'strip-ansi'],
-    replaceString: /^(gulp|postcss)(-|\.)/
+    replaceString: /^(gulp|postcss)(-|\.)/,
+    rename: { "gulp-if": "gif" }
 });
 
 var production = process.env.NODE_ENV === 'production';
@@ -63,12 +64,11 @@ gulp.task('css', function() {
         ];
     if (production) processors.push($.csswring());
     return gulp.src(paths.src.css)
-        .pipe($.cached('css'))
-        .pipe($.if(!production, $.sourcemaps.init()))
+        .pipe($.gif(!production, $.sourcemaps.init()))
             .pipe($.concat(paths.concat.css))
             .pipe($.postcss(processors))
         // Sourcemap write path is relative to the destination.
-        .pipe($.if(!production, $.sourcemaps.write('.')))
+        .pipe($.gif(!production, $.sourcemaps.write('.')))
         .pipe(gulp.dest(paths.dest.css))
 });
 

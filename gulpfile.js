@@ -1,5 +1,5 @@
-var gulp  = require('gulp');
 var paths = require('./paths');
+var gulp  = require('gulp');
 
 // Match postcss- and csswring + anything else that might pop up for
 // CSS processing. See package.json. Remove gulp- and postcss- prefix from
@@ -10,40 +10,36 @@ var $ = require('gulp-load-plugins')({
 });
 
 var log = function(err) {
-    $.util.log(util.colors.red('Error'), err.message);
+    $.util.log($.util.colors.red('Error'), err.message);
 };
 
-// Helper function for CSS tasks. Run all stylesheets through postcss
-// processors and concat them together. Optionally create a sourcemap.
-// gulp-cached is used to avoiding processsing unchanged files.
-//
-// https://github.com/postcss/postcss
-// https://github.com/floridoo/gulp-sourcemaps
-// https://github.com/wearefractal/gulp-concat
-// https://github.com/wearefractal/gulp-cached
-var css = function(use_sourcemap, extra) {
-    // Base set of processors to use in development or production.
-    var processors = [ $.autoprefixerCore(), $.nested(), $.mixins(), $.simpleVars() ].concat(extra || []);
-    var g = gulp.src(paths.src.css).pipe($.cached('css'));
-    if (use_sourcemap)
-        return g.pipe($.sourcemaps.init())
-                .pipe($.concat(paths.concat.css))
-                .pipe($.postcss(processors)).on('error', log)
-                .pipe($.sourcemaps.write('.'))
-                .pipe(gulp.dest(paths.dest.css));
-    else
-        return g.pipe($.concat(paths.concat.css))
-                .pipe($.postcss(processors)).on('error', log)
-                .pipe(gulp.dest(paths.dest.css));
-};
+var production = process.env.NODE_ENV === 'production';
 
 // Copy static files from source to destination.
 var resources = function(src, dest) {
     return gulp.src(src).pipe(gulp.dest(dest));
 };
 
-gulp.task('css', function() { css(true); });
-gulp.task('css:production', function() { css(false, [ $.csswring() ]); });
+// Run all stylesheets through postcss processors and concat them together.
+// Optionally create a sourcemap. gulp-cached is used to avoiding processsing
+// unchanged files.
+gulp.task('css', function() {
+    var processors = [
+        $.autoprefixerCore(),
+        $.nested(),
+        $.mixins(),
+        $.simpleVars()
+        ];
+    if (production) processors.push($.csswring());
+    return gulp.src(paths.src.css)
+        .pipe($.cached('css'))
+        .pipe($.if(!production, $.sourcemaps.init()))
+        .pipe($.concat(paths.concat.css))
+        .pipe($.postcss(processors))
+        .on('error', log)
+        .pipe($.if(!production, $.sourcemaps.write('.')))
+        .pipe(gulp.dest(paths.dest.css))
+});
 
 gulp.task('markup', function() {
     gulp.src(paths.src.markup)
@@ -66,5 +62,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('all', ['images', 'icons', 'markup', 'css'])
-gulp.task('all:production', ['images', 'icons', 'markup', 'css:production'])
 gulp.task('default', ['watch']);

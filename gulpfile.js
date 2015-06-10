@@ -4,19 +4,24 @@
  * DISABLE_NOTIFIER=true
  */
 
-var paths = require('./paths');
-var gulp  = require('gulp');
+var paths   = require('./paths');
+var gulp    = require('gulp');
+var fs      = require('fs');
 
 // Match postcss- and csswring + anything else that might pop up for
 // CSS processing. See package.json. Remove gulp- and postcss- prefix from
 // plugin names.
 var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'gulp.*', '*css*', 'autoprefixer-core', 'strip-ansi'],
+    pattern: ['gulp-*', 'gulp.*', '*css*', 'autoprefixer-core', 'strip-ansi', 'js-yaml'],
     replaceString: /^(gulp|postcss)(-|\.)/,
-    rename: { "gulp-if": "gif" }
+    rename: { 'gulp-if': 'gif', 'js-yaml': 'yaml' }
 });
 
 var production = process.env.NODE_ENV === 'production';
+
+var get_colours = function() {
+    return $.yaml.safeLoad(fs.readFileSync('./css/colours.yaml'));
+}
 
 // Copy static files from source to destination.
 var resources = function(src, dest) {
@@ -60,7 +65,7 @@ gulp.task('css', function() {
         $.autoprefixerCore(),
         $.nested(),
         $.mixins(),
-        $.simpleVars()
+        $.simpleVars({ variables: get_colours() })
         ];
     if (production) processors.push($.csswring());
     return gulp.src(paths.src.css)
@@ -70,6 +75,7 @@ gulp.task('css', function() {
         // Sourcemap write path is relative to the destination.
         .pipe($.gif(!production, $.sourcemaps.write('.')))
         .pipe(gulp.dest(paths.dest.css))
+        .pipe($.livereload());
 });
 
 gulp.task('markup', function() {
@@ -79,17 +85,19 @@ gulp.task('markup', function() {
 
         // Convert unicode characters (e.g. not <>, etc) to HTML entities
         .pipe($.entityConvert())
-        .pipe(gulp.dest(paths.dest.markup));
+        .pipe(gulp.dest(paths.dest.markup))
+        .pipe($.livereload());
 });
 
 gulp.task('images', function () { resources(paths.src.images, paths.dest.images) });
 gulp.task('icons', function() { resources(paths.src.icons, paths.dest.icons) });
 
 gulp.task('watch', function() {
-    gulp.watch(paths.src.css, ['css']);
-    gulp.watch(paths.src.markupwatch, ['markup']);
+    $.livereload.listen();
+    gulp.watch(paths.watch.css, ['css']);
+    gulp.watch(paths.watch.markup, ['markup']);
     gulp.watch(paths.src.images, ['images']);
-    gulp.watch(paths.src.icons, ['icons'])
+    gulp.watch(paths.src.icons, ['icons']);
 });
 
 gulp.task('all', ['images', 'icons', 'markup', 'css'])

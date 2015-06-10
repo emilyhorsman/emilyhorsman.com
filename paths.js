@@ -1,7 +1,10 @@
 module.exports = {
+    watch: {
+        css: 'css/*',
+        markup: 'markup/*'
+    },
     src: {
         css: 'css/*.css',
-        markupwatch: 'markup/*',
         markup: 'markup/!(_)*.jade',
         images: 'images/**/*',
         icons: 'icons/**/*'

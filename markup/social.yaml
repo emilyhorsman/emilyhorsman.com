@@ -1,44 +1,49 @@
 ---
 -
     name: "@emilymhorsman"
-    svg: twitter20.svg
+    category: network
     url: "https://twitter.com/emilymhorsman"
 -
     name: GitHub
-    svg: github13.svg
+    category: tech
     url: "https://github.com/emilyhorsman"
 -
     name: Facebook
-    svg: facebook31.svg
+    category: network
     url: "https://www.facebook.com/horsmanemily"
 -
+    name: Goodreads
+    category: content
+    url: "https://www.goodreads.com/user/show/11337141-emily-horsman"
+-
     name: Google+
-    svg: google29.svg
+    category: network
     url: "https://plus.google.com/+EmilyHorsmanOnGoogle"
 -
     name: Tumblr
-    svg: tumblr12.svg
+    category: content
     url: "http://emily-horsman.tumblr.com/"
 -
-    name: Goodreads
-    svg: goodreads.svg
-    url: "https://www.goodreads.com/user/show/11337141-emily-horsman"
+    name: Coursera
+    category: education
+    url: "https://www.coursera.org/user/i/998245e395c680de5e944c98896b0e18"
 -
     name: Foursquare
-    svg: foursquare6.svg
+    category: discovery
     url: "https://foursquare.com/ugh_emily"
 -
+    name: "Khan Academy"
+    category: education
+    url: "https://www.khanacademy.org/profile/horsmanemily/"
+-
     name: GitLab
+    category: tech
     url: "https://gitlab.com/u/emilyhorsman"
 -
     name: Untappd
+    category: discovery
     url: "https://untappd.com/user/emilyhorsman"
 -
-    name: "Khan Academy"
-    url: "https://www.khanacademy.org/profile/horsmanemily/"
--
     name: Duolingo
+    category: education
     url: "https://www.duolingo.com/emilyhorsman"
--
-    name: Coursera
-    url: "https://www.coursera.org/user/i/998245e395c680de5e944c98896b0e18"

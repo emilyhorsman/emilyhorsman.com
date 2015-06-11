@@ -24,9 +24,9 @@ h4.social {
     color: #fff;
     white-space: nowrap;
 
-    &.n0 { background-color: $madison_blue; }
-    &.n1 { background-color: $summer_sky_blue; }
-    &.n2 { background-color: $cinnabar_red; }
-    &.n3 { background-color: $pelorous_blue; }
-    &.n4 { background-color: #e4c1f9; }
+    &.network   { background-color: $madison_blue; }
+    &.tech      { background-color: $summer_sky_blue; }
+    &.discovery { background-color: $cinnabar_red; }
+    &.education { background-color: $pelorous_blue; }
+    &.content   { background-color: #e4c1f9; }
 }

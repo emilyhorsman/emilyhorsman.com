@@ -12,6 +12,10 @@
     category: network
     url: "https://www.facebook.com/horsmanemily"
 -
+    name: Instagram
+    category: discovery
+    url: "https://instagram.com/emily.horsman/"
+-
     name: Goodreads
     category: content
     url: "https://www.goodreads.com/user/show/11337141-emily-horsman"

@@ -20,13 +20,13 @@ h4.social {
     text-decoration: none;
     line-height: 2.5em;
     margin-right: 1em;
-    padding: 0.2em 0.4em;
+    padding: 0.3em 0.7em;
     color: #fff;
     white-space: nowrap;
 
     &.network   { background-color: $madison_blue; }
-    &.tech      { background-color: $summer_sky_blue; }
-    &.discovery { background-color: $cinnabar_red; }
-    &.education { background-color: $pelorous_blue; }
-    &.content   { background-color: #e4c1f9; }
+    &.tech      { background-color: $amethyst; }
+    &.discovery { background-color: $pomegranate; }
+    &.education { background-color: $wisteria; }
+    &.content   { background-color: $wet_asphalt; }
 }

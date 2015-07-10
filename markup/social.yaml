@@ -4,6 +4,10 @@
     category: network
     url: "https://twitter.com/emilymhorsman"
 -
+    name: keybase.io
+    category: network
+    url: "https://keybase.io/emilyhorsman"
+-
     name: GitHub
     category: tech
     url: "https://github.com/emilyhorsman"

@@ -29,6 +29,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'home',
     'search',
+    'resume',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
